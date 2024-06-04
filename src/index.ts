@@ -1,5 +1,5 @@
-import routes from './routes'
 import express, { Application, Request, Response } from 'express'
+import routes from './routes'
 import morgan from 'morgan'
 import fs from 'fs'
 import path from 'path'

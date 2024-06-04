@@ -30,7 +30,7 @@ imagesProcess.get('/images', async (req: Request, res: Response): Promise<void> 
 
     const filePathSource = `${path.resolve(__dirname, `../../../assets/full/${filename}.jpg`)}`;
     // const filePathSource = `D:/server/node_js/assets/full/${filename}.jpg`;
-    const filePathThumb = `${path.join(__dirname, `../../../assets/thumb/${filename}-${height}x${width}.jpg`)}`;
+    const filePathThumb = `${path.join(__dirname, `../../../assets/thumb/${filename}-${width}x${height}.jpg`)}`;
     // const filePathThumb = `D:/server/node_js/assets/thumb/${filename}-${height}x${width}.jpg`;
 
     /*check if image exist
