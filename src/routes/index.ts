@@ -6,7 +6,7 @@ import router from './api/processUpload'
 const routes = express.Router()
 
 routes.use('/api/process', imagesProcess)
-routes.use('/api/processes', router)
+routes.use('/api/processUpload', router)
 
 //routes.use('/listImages', listImagesRouter)
 
