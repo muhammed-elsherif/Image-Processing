@@ -1,9 +1,11 @@
 import express from 'express'
-import imagesProcess from './api/process';
+import imagesProcess from './api/process'
+import router from './api/processes'
 
-const routes = express.Router();
+const routes = express.Router()
 
-routes.use('/api/process' , imagesProcess);
+routes.use('/api/process', imagesProcess)
+routes.use('/api/processes', router)
 
 //routes.use('/listImages', listImagesRouter);
 
