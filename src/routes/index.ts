@@ -1,6 +1,6 @@
 import express from 'express'
 import imagesProcess from './api/process'
-import router from './api/processes'
+import router from './api/processUpload'
 
 const routes = express.Router()
 
