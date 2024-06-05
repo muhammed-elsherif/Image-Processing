@@ -1,7 +1,10 @@
+/* eslint-disable no-console */
+/* eslint-disable prettier/prettier */
 import express, { Application, Request, Response } from 'express'
 import routes from './routes'
 import morgan from 'morgan'
 import fs from 'fs'
+import cors from 'cors'
 import path from 'path'
 import * as dotenv from 'dotenv'
 import { fstat } from 'fs'
@@ -9,9 +12,10 @@ import { fstat } from 'fs'
 dotenv.config()
 // create an instance server
 const app: Application = express()
+app.use(cors())
 // HTTP request logger middleware
 app.use(morgan('short'))
-const port = 3000
+const port = process.env.port || 3000
 app.use(routes)
 
 app.get('/', (req: Request, res: Response) => {
@@ -22,7 +26,7 @@ app.listen(port, () => {
   if (!fs.existsSync(thumbPath)) {
     fs.mkdirSync(thumbPath)
   }
-  console.log(`server started at http://localhost:${port}`)
+  console.log(`server started at ${port}`)
 })
 
 export default app
