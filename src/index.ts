@@ -12,15 +12,17 @@ import { fstat } from 'fs'
 dotenv.config()
 // create an instance server
 const app: Application = express()
+const port = process.env.PORT || 3001
+
 app.use(cors())
 // HTTP request logger middleware
 app.use(morgan('short'))
-const port = process.env.port || 3000
 app.use(routes)
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).send('Connected!')
 })
+
 app.listen(port, () => {
   const thumbPath = path.resolve(__dirname, '../assets/thumb')
   if (!fs.existsSync(thumbPath)) {
